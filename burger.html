@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+/* h2 {
+  vertical-align: center;
+  text-align: center;
+} */
+
+/* html, body {
+  margin: 0;
+  height: 100%;
+} */
+
+/* * {
+  font-family: "Raleway";
+  box-sizing: border-box;
+} */
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00BAF0;
+  background: linear-gradient(to left, #f46b45, #eea849);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+  width: 100%;
+}
+.top-nav>div{
+    width: 100%;
+}
+.top-nav>div>img{
+
+position: relative;
+left: 120px;
+}
+
+.menu {
+  display: flex;
+  
+ 
+  width: 100%;
+
+}
+
+.menu > li {
+text-align: left;
+  overflow: hidden;
+  margin-left: 20px;
+  position: relative;
+  left: 3px;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 51px;
+    left: 0;
+    
+    margin-left: 340px;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: left;
+  }
+  #menu-toggle ~ .menu>li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+  }
+
+
+
+  
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(131, 0, 238);
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+
+
+</style>
+<body>
+    
+    <section class="top-nav">
+      <div>
+        <img src="https://www.freepnglogos.com/uploads/zara-logo-png/zara-avrupa-logos-2020-desing--11.png" alt="">
+      </div>
+
+
+
+      <input id="menu-toggle" type="checkbox" />
+
+
+      <label class='menu-button-container' for="menu-toggle">
+
+
+      <div class='menu-button'></div>
+
+
+    </label>
+    
+    </section>
+</body>
+</html>

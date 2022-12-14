@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #conta
+
+
+    #signin{
+    display: none;
+    margin: auto;    
+    }
+
+
+
+
+</style>
+
+<body>
+    <div id="container">
+        <div>
+            <button>Register</button>
+            <button>Log-In</button>
+        </div>
+        <form id="signup">
+            <h1>Register</h1>
+            <input type="text" id="name" placeholder="Name" required>
+            <br>
+            <input type="email" id="email" placeholder="email" required>
+            <br>
+            <input type="password" id="password" placeholder="password" required>
+            <br>
+            <input type="password" id="passwordchk" placeholder="Re-enter password" required>
+            <br>
+            <input type="submit">
+
+        </form>
+
+        <form id="signin">
+            <h1>Log_In</h1>
+            <input type="email" id="email1" placeholder="email" required>
+            <br>
+            <input type="password" id="password1" placeholder="password" required>
+            <br>
+            <input type="submit">
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let loginbtn = document.querySelector("div>button:nth-child(2)");
+    let signupbtn = document.querySelector("div>button:nth-child(1)");
+    let signin = document.querySelector("#signin");
+    let signup = document.querySelector("#signup");
+
+    let users = JSON.parse(localStorage.getItem("usersdata")) || [];
+
+
+    // signin.style.display = "none";
+
+
+
+    loginbtn.addEventListener("click", function () {
+        signup.style.display = "none";
+        signin.style.display = "block";
+        document.title = "Sign In";
+
+    })
+
+    signupbtn.addEventListener("click", function () {
+        signin.style.display = "none";
+        signup.style.display = "block"
+        document.title = "Sign up"
+
+    })
+
+    signup.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let count = 0;
+        users.forEach(function (element) {
+            if (element.email === signup.email.value) {
+                count++;
+            }
+        })
+        if (count > 0) {
+            alert("user already register")
+        }
+        else {
+            if (signup.password.value != signup.passwordchk.value) {
+                alert("password do not match!")
+            }
+            else {
+                let user = {
+                    name: signup.name.value,
+                    email: signup.email.value,
+                    password: signup.password.value,
+                };
+                users.push(user);
+                localStorage.setItem("usersdata", JSON.stringify(users));
+                alert("sign up sucessull");
+                signup.reset();
+            }
+        }
+    })
+
+
+    signin.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let count = 0;
+        let temp;
+        users.forEach(function (element) {
+            if (element.email === signin.email1.value) {
+                count++;
+                temp = element;
+                localStorage.setItem("loggeduser", JSON.stringify(element));
+            }
+        })
+        if (count == 0) {
+            alert("user not registered!");
+        }
+        else {
+            if (temp.password != signin.password1.value) {
+                alert("Wrong password")
+            } else {
+                
+                    alert("login successful!");
+                    window.location.assign("./index.html")
+                
+        }
+          
+            }
+        })
+
+
+
+</script>

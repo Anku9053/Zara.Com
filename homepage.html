@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #slide{
+      
+        width: 100%;
+    }
+    #slide>img{
+        width: 100%;
+    }
+    
+.nav{
+  
+    margin-top: 20px;
+    width: 100%;
+   
+    
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    
+    
+}
+.nav>div>img{
+    width: 20%;
+    position: relative;
+    left: 130px;
+}
+.nav>div>div>a{
+ 
+    text-align: end;
+    margin-left:100px ;
+    position: relative;
+    bottom: 100px;
+    left: 820px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+  
+}
+#empty{
+    height: 600px;
+   
+    width: 100%;
+    margin: auto;
+   
+}
+#empty>p{
+   position: relative;
+   top: 180px;
+   margin-left: 135px;
+   font-size: 13px;
+   cursor: pointer;
+}
+#empty>div{
+    height: auto;
+ 
+    padding-top: 30px;
+    position: relative;
+    top: 130px;
+    margin: auto;
+   
+}
+#empty>div>p:nth-child(1){
+    text-align: center;
+    margin-top: 100px;
+    cursor: pointer;
+}
+#empty>div>p:nth-child(2){
+    text-align: center;
+    margin-top: 100px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+</style>
+<link rel="stylesheet" href="./newburger.css">
+<body>
+    <div class="nav">
+        <div>
+            <img src="https://www.freepnglogos.com/uploads/zara-logo-png/zara-avrupa-logos-2020-desing--11.png" alt="Zara">
+
+      
+      <div>
+        <a href="">Search</a>
+        <a href="">Log IN</a>
+        <a href="">Help</a>
+       
+      </div>
+      
+    
+    </div>
+    <div id="navigation">
+        <div id="menu" onclick="onclickmenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <u class="burger" id="burger">
+            <li><a href="#">New</a></li>
+            <li><a href="#">Party</a></li>
+            <li><a href="#">Best Seller</a></li>
+            <li><a href="#">Basic </a></li>
+            <li><a href="#">KNIT Wears</a></li>
+            <li><a href="#">Coat</a></li>
+            <li><a href="#">Dress</a></li>
+            <li><a href="#">Shirt</a></li>
+            <li><a href="#">Top</a></li>
+            <li><a href="#">Trouser</a></li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Bleazer</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Sweat shirts</a></li>
+            <li><a href="#">Tshirt</a></li>
+            <li><a href="#">Suits</a></li>
+            <li><a href="#">Co-Order Suits</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Perfumes</a></li>
+            <li><a href="#">Special price</a></li>
+            <li><a href="#">Gift Idea</a></li>
+            <li><a href="#">Special Edition</a></li>
+            <li><a href="#">Gift Card</a></li>
+
+        </u>
+
+    </div>
+    
+</div>
+
+
+    <div id="slide">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-49-2//w/1366/IMAGE-landscape-default-fill-9470e5e9-1ec3-45c6-9045-53a692b8b504-default_0.jpg?ts=1670431933456" alt="" id="first">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-knitwear/subhome-xmedia-49//w/1366/IMAGE-landscape-fill-4b91c18a-fd1a-4d7e-8ddb-39cafb54cdef-default_0.jpg?ts=1670433076541" alt="" id="first">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-collection/subhome-xmedia-49//w/1366/IMAGE-landscape-default-fill-cdf1d01f-6f9e-46e7-a035-8079f5d17f72-default_0.jpg?ts=1670432527336" alt="" id="first">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1366/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306" alt="" id="first">
+       
+        
+    </div>
+    <div id="empty">
+        <div>
+            <p>JOIN OUR NEWSLETTER</p>
+       
+            <p>Instagram   Pininterest  Facebook    Twitter   Pininterest</p>
+            
+        </div>
+        <p>Name and Address of the manufacturer</p>
+        <p>Industries and decosta textile SA</p>
+        <p>Avinda then la deojenrio to suggent</p>
+    </div>
+
+
+</body>
+</html>
+<script >
+    function onclickmenu(){
+    document.getElementById("menu").classList.toggle("icon")
+    document.getElementById("burger").classList.toggle("change")
+
+
+}
+    let first = document.querySelector("#first")
+
+    function imageslide(){
+        first.src = "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-knitwear/subhome-xmedia-49//w/1366/IMAGE-landscape-fill-4b91c18a-fd1a-4d7e-8ddb-39cafb54cdef-default_0.jpg?ts=1670433076541"
+
+    }
+    
+    function imageslide2(){
+        first.src = "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-knitwear/subhome-xmedia-49//w/1366/IMAGE-landscape-fill-4b91c18a-fd1a-4d7e-8ddb-39cafb54cdef-default_0.jpg?ts=1670433076541"
+
+    }
+    
+    function imageslide3(){
+        first.src = "https://static.zara.net/photos///contents/mkt/spots/aw22-north-collection/subhome-xmedia-49//w/1366/IMAGE-landscape-default-fill-cdf1d01f-6f9e-46e7-a035-8079f5d17f72-default_0.jpg?ts=1670432527336"
+
+    }
+    
+    function imageslide4(){
+        first.src = "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1366/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306"
+
+    }
+    
+    function imageslide5(){
+        first.src = "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-knitwear/subhome-xmedia-49//w/1366/IMAGE-landscape-fill-4b91c18a-fd1a-4d7e-8ddb-39cafb54cdef-default_0.jpg?ts=1670433076541"
+
+    }
+    
+    setInterval(imageslide,4000)
+    setInterval(imageslide2,8000)
+    setInterval(imageslide3,12000)
+    setInterval(imageslide4,16000)
+    setInterval(imageslide5,20000)
+
+
+   
+
+
+
+
+
+</script>
