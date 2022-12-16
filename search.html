@@ -11,8 +11,11 @@
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: auto;
-        gap: 20px;
-
+        gap: 10px;
+        margin: auto;
+        width: 100%;
+        margin-top: 230px;
+       
     }
     #container>div>img{
         width: 100%;
@@ -21,34 +24,42 @@
         text-align: center;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         background-color: white;
+        width: 100%;
+        margin: auto;
+        height: 800px;
         
     }
     input{
         padding: 10px 10px;
-       margin-left: 120px;
-        margin-bottom: 20px;
-        position: fixed;
-        top: 0;
-       
+       margin-left: 520px;
+       margin-top: 50px;
+       position: relative;
+       top:150px;
+       /* position: fixed;
+       top: 0;
+        /* margin-bottom: 20px; */
+        /* position: fixed;
+        top: 0; */
+        
         border-radius: 10px;
         color: black;
         width: 300px;
     }
-    button:hover{
-        cursor: pointer;
-
-    }
-
+    
     #button{
-        padding: 10px 10px;
-        margin-bottom: 20px;
+        border: 0px;
+        cursor: pointer;
+        text-align: center;
         position: fixed;
         top: 0;
+        
         border-radius: 10px;
         margin-left: 500px;
-        color: white;
-        width: 300px;
+        color: rgb(8, 8, 8);
+        width: 100px;
+        height: 50px;
     }
+   
     .nav{
   
   margin-top: 20px;
@@ -168,6 +179,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+
   
 </style>
 <body>
@@ -181,6 +193,7 @@ body{
             
             <a href="">ankesh</a>
             <a href="">Help</a>
+            <a href="">Cart</a>
            
           </div>
           
@@ -225,20 +238,23 @@ body{
         </div>
         
     </div>
-    <button id="button"><a href="cart.html"> YOUR CART</a></button>
+ 
+    <!-- <a href=""><p id="button"><b>Cart</b> </p></a> -->
     <input oninput="search()" type="text" placeholder="search">
-    <select onchange="handlesort()">
+    <!-- <select onchange="handlesort()">
         <option value="LTH">Low To High</option>
         <option value="HTL">High To Low</option>
-    </select>
+    </select> -->
     <div id="container">
 
     </div>
-    <button></button>
+    <!-- <button></button> -->
     
 </body>
 </html>
 <script>
+    let container = document.querySelector("#container")
+    container.style.display = "none"
     let bag =[];
     let cartitem = JSON.parse(localStorage.getItem("cartproducts"))||[];
     fetch("https://fakestoreapi.com/products")
@@ -248,16 +264,16 @@ body{
         console.log(data);
         displaycard(data);
     });
-    function handlesort(){
-        let selected = document.querySelector("select").value;
-        if(selected=="HTL"){
-            bag.sort((a,b)=>b.price-a.price)
-        }else if(selected=="LTH"){
-            bag.sort((a,b)=>a.price-b.price)
-        }
-        console.log(bag);
-        displaycard(bag);
-    }
+    // function handlesort(){
+    //     let selected = document.querySelector("select").value;
+    //     if(selected=="HTL"){
+    //         bag.sort((a,b)=>b.price-a.price)
+    //     }else if(selected=="LTH"){
+    //         bag.sort((a,b)=>a.price-b.price)
+    //     }
+    //     console.log(bag);
+    //     displaycard(bag);
+    // }
 
 
 
@@ -271,10 +287,21 @@ body{
             return element.title.toLowerCase().includes(q.toLowerCase())
 
         })
+        container.style.display = "grid"
+        
         displaycard(newdata);
+        if(q==""){
+            container.style.display = "none"
+        }
+       
     }
 
+    function onclickmenu(){
+    document.getElementById("menu").classList.toggle("icon")
+    document.getElementById("burger").classList.toggle("change")
 
+
+}
 
 
 
@@ -290,23 +317,23 @@ body{
             let title = document.createElement("h2");
             title.innerText = element.title;
 
-            let des = document.createElement("p");
-            des.innerText = element.description;
+            // let des = document.createElement("p");
+            // des.innerText = element.description;
 
             let cost = document.createElement("p");
-            cost.innerText = "price"+":-"+element.price;
+            cost.innerText = "price"+":-"+Number(1000)*element.price;
         
-            let rating = document.createElement("p");
-            rating.innerText = "ratings"+":-"+element.rating.rate
+            // let rating = document.createElement("p");
+            // rating.innerText = "ratings"+":-"+element.rating.rate
 
             let btn = document.createElement("button");
-            btn.innerText = "ADD TO CART";
+            btn.innerText = "+";
             btn.addEventListener("click",function(){
                 cartitem.push(element)
                 localStorage.setItem("cartproducts",JSON.stringify(cartitem))
             })
 
-            div.append(imageprod,title,des,cost,rating,btn);
+            div.append(imageprod,title,cost,btn);
             document.querySelector("#container").append(div);
         });
     }
