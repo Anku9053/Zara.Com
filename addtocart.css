@@ -1,0 +1,112 @@
+#footer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 100px;
+    height: 800px;
+    width: 100%;
+    margin: auto;
+   
+}
+#footer>div{
+width: 60%;
+height: 400px;
+margin: auto;
+}
+#footer>div>h3{
+font-size: 15px;
+cursor: pointer;
+}
+#footer>div>h3:hover{
+    text-decoration: underline;
+}
+#footer>div>p:hover{
+    text-decoration: underline;
+}
+#footer>div>p{
+    font-size: 12px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+#footer>div:nth-child(2){
+    position: relative;
+    right: 150px;
+}
+#footer>div:nth-child(3){
+    position: relative;
+    right: 350px;
+}
+#footer>div:nth-child(4){
+    position: relative;
+    right: 550px;
+}
+#blank{
+    width: 100%;
+    margin: auto;
+}
+#last{
+    width: 90%;
+    margin: auto;
+    height: 270px;
+}
+#last>div{
+    margin-top: 50px;
+    font-size: 15px;
+    width: 100%;
+   
+}
+#last>div>p{
+   
+    font-size: 10px;
+    
+   
+}
+#reprint{
+    margin-left: 900px;
+    position: fixed;
+    top: 0;
+}
+#reprint>button{
+    margin-left: 225px;
+    position: relative;
+    bottom: 55px;
+    width: 200px;
+    height: 30px;
+    color: white;
+    border: 2px solid black;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#reprint>button:hover{
+    border: 2px solid rgb(255, 0, 0);
+}
+#cart-container{
+    margin-top: 200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#cart-container>div{
+    width: 70%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 500px;
+}
+#cart-container>div>img{
+    width: 100%;
+    
+}
+#cart-container>div>button:nth-child(3){
+    margin-left: 60px;
+   
+}
+#cart-container>div>button:nth-child(6){
+    background-color: black;
+    color: white;
+    margin-left: 30px;
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+   
+}
