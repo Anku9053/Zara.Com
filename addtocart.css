@@ -84,6 +84,7 @@ cursor: pointer;
     margin-top: 200px;
     width: 100%;
     display: grid;
+    gap: 40px;
     grid-template-columns: repeat(3,1fr);
 }
 #cart-container>div{

@@ -193,7 +193,7 @@ body{
             
             <a href="">ankesh</a>
             <a href="">Help</a>
-            <a href="">Cart</a>
+            <a href="./addtocart.html">Cart</a>
            
           </div>
           
@@ -329,11 +329,13 @@ body{
             let btn = document.createElement("button");
             btn.innerText = "+";
             btn.addEventListener("click",function(){
-                cartitem.push(element)
+                cartitem.push({...element,quantity:1})
                 localStorage.setItem("cartproducts",JSON.stringify(cartitem))
             })
+            let quantity = document.createElement("span");
+            quantity.textContent = element.quantity;
 
-            div.append(imageprod,title,cost,btn);
+            div.append(imageprod,title,cost,btn,quantity);
             document.querySelector("#container").append(div);
         });
     }

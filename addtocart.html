@@ -280,7 +280,7 @@
             // des.innerText = element.description;
 
             let price = document.createElement("p");
-            price.innerText = "price" + ":-" +"₹"+ Number(1000) * element.price;
+            price.innerText = "price" + ":-" +"₹"+ Number(1000) * Number(element.price);
 
             // let rating = document.createElement("p");
             // rating.innerText = "ratings"+":-"+element.rating.rate
@@ -303,7 +303,7 @@
                 localStorage.setItem("cartproducts", JSON.stringify(cartdata));
                 window.location.reload();
                 display(cartdata)
-                if (cartdata[index].quantity <= 1) {
+                if (cartdata[index].quantity.textContent<=1) {
 
 
                     cartdata.splice(index, 1);
@@ -311,10 +311,7 @@
 
 
                 }
-                // localStorage.setItem("cart",JSON.stringify(cartitem))
-                // 
-                // totalprice+=Number(element.price);
-
+           
 
             })
             let quantity = document.createElement("span");
