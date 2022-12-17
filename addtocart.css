@@ -10,7 +10,8 @@
 #footer>div{
 width: 60%;
 height: 400px;
-margin: auto;
+margin-top: 400px;
+margin-left: 130px;
 }
 #footer>div>h3{
 font-size: 15px;
@@ -50,6 +51,7 @@ cursor: pointer;
 }
 #last>div{
     margin-top: 50px;
+    margin-left: 70px;
     font-size: 15px;
     width: 100%;
    
@@ -86,12 +88,14 @@ cursor: pointer;
 #cart-container{
     margin-top: 200px;
     width: 100%;
+    
+    gap: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
 #cart-container>div{
     width: 70%;
-    margin: auto;
+    margin-left: 135px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 500px;
 }
