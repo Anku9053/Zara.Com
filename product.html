@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nav{
+  
+  margin-top: 20px;
+  width: 100%;
+ 
+  
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  
+  
+}
+.nav>div>img{
+  width: 20%;
+  position: relative;
+  left: 130px;
+}
+.nav>div>div>a{
+
+  text-align: end;
+  margin-left:100px ;
+  position: relative;
+  bottom: 100px;
+  left: 920px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 25px;
+
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "PT Sans",sans-serif;
+    background-color:white;
+    
+}
+#menu{
+    width: 35px;
+    height: 30px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+.bar{
+    height: 10px;
+    width: 140%;
+    background-color: rgb(0,0,0);
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    position: relative;
+    bottom: 150px;
+    
+}
+#bar1{
+    transform: translateY(-4px);
+
+}
+#bar3{
+    transform: translateY(4px);
+    
+}
+.burger li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right:120px;
+  
+   
+   
+   
+}
+.burger li a:hover{
+    border: 1px solid #fff;
+}
+.burger li{
+    list-style: none;
+    padding:0px;
+    text-decoration: none;
+    margin: 0px;
+    position: relative;
+   top: 60px;
+   text-align: left;
+   
+}
+
+
+.burger{
+    padding: 0;
+    margin: 0 20px;
+    transition: 1s ease;
+    display: none;
+}
+.icon .bar{
+    background-color: rgb(236, 6, 6);
+
+}
+.icon #bar1{
+    transform: translateY(4px) rotate(-45degree);
+}
+.icon #bar3{
+    transform: translateY(-6px) rotate(45degree);
+}
+.icon #bar2{
+   opacity: 0;
+}
+.change{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    margin: 0;
+    position:absolute;
+    
+    top: 0;
+    z-index: -100;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#product{
+    width: 100%;
+    text-align: center;
+    margin-top: 180px;
+}
+#product>div>img{
+    width: 20%;
+   
+}
+#product>div{
+   
+    margin: auto;
+    
+}
+#product>div>button{
+   
+   margin-left: 430px;
+  position: relative;
+  bottom: 40px;
+   
+}
+#product>div>p{
+   
+   margin-right: 430px;
+   margin-bottom: 20px;
+}
+
+
+
+
+</style>
+<body>
+    <div class="nav">
+        <div>
+            <img src="https://www.freepnglogos.com/uploads/zara-logo-png/zara-avrupa-logos-2020-desing--11.png" alt="Zara">
+
+      
+      <div>
+        <a href="">Search</a>
+        <a href="">ankesh</a>
+        
+       
+      </div>
+      
+    
+    </div>
+    <div id="navigation">
+        <div id="menu" onclick="onclickmenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <u class="burger" id="burger">
+            <li><a href="#">New</a></li>
+            <li><a href="#">Party</a></li>
+            <li><a href="#">Best Seller</a></li>
+            <li><a href="#">Basic </a></li>
+            <li><a href="#">KNIT Wears</a></li>
+            <li><a href="#">Coat</a></li>
+            <li><a href="#">Dress</a></li>
+            <li><a href="#">Shirt</a></li>
+            <li><a href="#">Top</a></li>
+            <li><a href="#">Trouser</a></li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Bleazer</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Sweat shirts</a></li>
+            <li><a href="#">Tshirt</a></li>
+            <li><a href="#">Suits</a></li>
+            <li><a href="#">Co-Order Suits</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Perfumes</a></li>
+            <li><a href="#">Special price</a></li>
+            <li><a href="#">Gift Idea</a></li>
+            <li><a href="#">Special Edition</a></li>
+            <li><a href="#">Gift Card</a></li>
+
+        </u>
+
+    </div>
+    
+</div>
+    <div id="product">
+        <!-- Append data here -->
+    </div>
+</body>
+</html>
+<script>
+let bag = [];
+let product = document.querySelector("#product")
+let cartitem = JSON.parse(localStorage.getItem("cartproducts"))||[];
+fetch("https://fakestoreapi.com/products")
+    .then((res)=>res.json())
+    .then((data)=>{
+        bag = data;
+        console.log(data);
+        display(data)
+        
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+
+
+    function display(data){
+      product.innerHTML = "";
+        data.forEach(function (element){
+
+            let div = document.createElement("div");
+            let imageprod = document.createElement("img");
+            imageprod.setAttribute("src",element.image)
+
+            let title = document.createElement("h2");
+            title.innerText = element.title;
+
+           
+
+            let cost = document.createElement("p");
+            cost.innerText = "price"+":-"+Number(1000)*element.price;
+        
+
+            let btn = document.createElement("button");
+            btn.innerText = "+";
+            btn.addEventListener("click",function(){
+                cartitem.push(element)
+                localStorage.setItem("cartproducts",JSON.stringify(cartitem))
+            })
+
+            div.append(imageprod,title,cost,btn);
+           product.append(div);
+        });
+    }
+    function onclickmenu(){
+    document.getElementById("menu").classList.toggle("icon")
+    document.getElementById("burger").classList.toggle("change")
+
+
+}
+
+
+</script>
