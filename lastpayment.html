@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+</head>
+<link rel="stylesheet" href="./lastpayment.css">
+<style>
+    body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "PT Sans",sans-serif;
+    background-color:white;
+    
+}
+#menu{
+    width: 35px;
+    height: 30px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+.bar{
+    height: 10px;
+    width: 140%;
+    background-color: rgb(0,0,0);
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    position: relative;
+    bottom: 150px;
+    
+}
+#bar1{
+    transform: translateY(-4px);
+
+}
+#bar3{
+    transform: translateY(4px);
+    
+}
+.burger li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right:120px;
+  
+   
+   
+   
+}
+.burger li a:hover{
+    border: 1px solid #fff;
+}
+.burger li{
+    list-style: none;
+    padding:0px;
+    text-decoration: none;
+    margin: 0px;
+    position: relative;
+   top: 60px;
+   text-align: left;
+   
+}
+
+
+.burger{
+    padding: 0;
+    margin: 0 20px;
+    transition: 1s ease;
+    display: none;
+}
+.icon .bar{
+    background-color: rgb(236, 6, 6);
+
+}
+.icon #bar1{
+    transform: translateY(4px) rotate(-45degree);
+}
+.icon #bar3{
+    transform: translateY(-6px) rotate(45degree);
+}
+.icon #bar2{
+   opacity: 0;
+}
+.change{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    margin: 0;
+    position:absolute;
+    
+    top: 0;
+    z-index: -100;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+.nav{
+  
+  margin-top: 20px;
+  width: 100%;
+ 
+  
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  
+  
+}
+.nav>div>img{
+  width: 20%;
+  position: relative;
+  left: 130px;
+}
+.nav>div>div>a{
+
+  text-align: end;
+  margin-left:100px ;
+  position: relative;
+  bottom: 100px;
+  left: 820px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 25px;
+
+}
+</style>
+<body>
+    <div class="nav">
+        <div>
+            <img src="https://www.freepnglogos.com/uploads/zara-logo-png/zara-avrupa-logos-2020-desing--11.png" alt="Zara">  
+      
+      
+    
+    </div>
+    <div id="navigation">
+        <div id="menu" onclick="onclickmenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <u class="burger" id="burger">
+            <li><a href="#">New</a></li>
+            <li><a href="#">Party</a></li>
+            <li><a href="#">Best Seller</a></li>
+            <li><a href="#">Basic </a></li>
+            <li><a href="#">KNIT Wears</a></li>
+            <li><a href="#">Coat</a></li>
+            <li><a href="#">Dress</a></li>
+            <li><a href="#">Shirt</a></li>
+            <li><a href="#">Top</a></li>
+            <li><a href="#">Trouser</a></li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Bleazer</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Sweat shirts</a></li>
+            <li><a href="#">Tshirt</a></li>
+            <li><a href="#">Suits</a></li>
+            <li><a href="#">Co-Order Suits</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Perfumes</a></li>
+            <li><a href="#">Special price</a></li>
+            <li><a href="#">Gift Idea</a></li>
+            <li><a href="#">Special Edition</a></li>
+            <li><a href="#">Gift Card</a></li>
+
+        </u>
+
+    </div>
+    
+</div>
+    
+
+   
+       
+    <div id="cart-container">
+        <!-- Here Append All the cart Products  -->
+    </div>
+    <div id="const">
+        <div >
+            <img src="https://static.zara.net/static/images/payment/payment/icon-payment-visa.svg" alt="">
+           
+        </div>
+        
+        </div>
+    <div id="head">
+        <h3>ENTER YOUR CARD DETAILS</h3>
+    </div>
+    <div  id="main">
+        <div id="months">
+            <input type="number" id="number" required placeholder="Card Number">
+            <input type="month" required placeholder="Month">
+        
+            
+           </div>
+           <div id="cvv">
+            <input type="text" required placeholder="placeholder name">
+            <input type="number" required placeholder="CVV">
+           
+           </div>
+           <button id="submit">Submit</button>
+    </div>
+ 
+
+
+   
+
+    <div id="footer">
+        <div>
+            <h3>HELP</h3>
+            <p>SHOP AT ZARA</p>
+            <p>PRODUCT</p>
+            <p>GIFT CARD</p>
+            <p>PAYMENT</p>
+            <p>SHIPPING</p>
+            <p>EXCHANGE AND RETURN</p>
+            <p>SHOP AND COMPANY</p>
+            <p>CLOTHES COLLECTION PROGRAM</p>
+            <p>MY ACCOUNT</p>
+
+        </div>
+        <div>
+            <h3>FOLLOW US</h3>
+            <p>NEWSLETTER</p>
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTEREST</p>
+            <p>YOUTUBE</p>
+           
+        </div>
+        <div>
+            <h3>COMPANY</h3>
+            <p>ABOUT US</p>
+            <p>JOIN LIFE</p>
+            <p>OFFICES</p>
+            <p>STORES</p>
+            <p>WORK WITH US</p>
+            
+
+        </div>
+        <div>
+
+            <h3>POLICIES</h3>
+            <p>PRIVACY POLICY</p>
+            <p>PURCHASE CONDITIONS</p>
+            <p>GIFT CARD CONDITIONS</p>
+            <p>COOKIES SETTINGS</p>
+
+        </div>
+
+    </div>
+    <div id="blank">
+        <div id="last">
+            <div>
+                <p>INDIA</p>
+            </div>
+            <div>
+                <p>NAME AND ADDRESS OF THE MANUFACTURER: <br>
+                    INDUSTRIA DE DISEÑO TEXTIL, S.A. (INDITEX, S.A.) <br>
+                    AVENIDA DE LA DIPUTACIÓN, EDIFICIO INDITEX, <br>
+                    15143, ARTEIXO (A CORUÑA), SPAIN</p>
+            </div>
+    
+        </div>
+    </div>
+    
+</body>
+<script>
+
+
+    let cartdata = JSON.parse(localStorage.getItem("cartproducts")) || []
+    let span = document.querySelector("#cart-total")
+    let div2 = document.querySelector("#cart-container")
+    
+
+
+
+   
+
+    function onclickmenu(){
+    document.getElementById("menu").classList.toggle("icon")
+    document.getElementById("burger").classList.toggle("change")
+
+
+}
+let number = document.querySelector("#number")
+console.log(number.value)
+
+let btn = document.querySelector("#submit")
+btn.addEventListener("click",function(){
+    
+    if(number.value=="1234567890" || number.value == 1234567890){
+    alert("Your purchase is sucessful")
+    console.log("alert")
+}else if(number.value!=="1234567890" || number.value !== 1234567890){
+    alert("please fill required value correctly")
+}else if(number.value==""){
+    alert("please fill required value")
+}
+
+})
+
+
+
+
+</script>
+
+</html>
