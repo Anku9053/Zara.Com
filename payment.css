@@ -1,0 +1,201 @@
+#footer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 100px;
+    height: 800px;
+    width: 100%;
+    margin-left: 65px;
+   
+}
+#footer>div{
+width: 60%;
+height: 400px;
+margin: auto;
+}
+#footer>div>h3{
+font-size: 15px;
+cursor: pointer;
+}
+#footer>div>h3:hover{
+    text-decoration: underline;
+}
+#footer>div>p:hover{
+    text-decoration: underline;
+}
+#footer>div>p{
+    font-size: 12px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+#footer>div:nth-child(2){
+    position: relative;
+    right: 150px;
+}
+#footer>div:nth-child(3){
+    position: relative;
+    right: 350px;
+}
+#footer>div:nth-child(4){
+    position: relative;
+    right: 550px;
+}
+#blank{
+    width: 100%;
+    margin-left: 65px;
+}
+#last{
+    width: 90%;
+    margin: auto;
+    height: 270px;
+}
+#last>div{
+    margin-top: 50px;
+    font-size: 15px;
+    width: 100%;
+   
+}
+#last>div>p{
+   
+    font-size: 10px;
+    
+   
+}
+
+/* #reprint{
+    
+    position: fixed;
+    top: 0;
+}
+#reprint>button{
+    margin-left: 225px;
+    position: relative;
+    bottom: 55px;
+    width: 200px;
+    height: 30px;
+    color: white;
+    border: 2px solid black;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#reprint>button:hover{
+    border: 2px solid rgb(255, 0, 0);
+} */
+#cart-container{
+    margin-top: 200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#cart-container>div{
+    width: 70%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 500px;
+}
+#cart-container>div>img{
+    width: 100%;
+    
+}
+#cart-container>div>button:nth-child(3){
+    margin-left: 60px;
+   
+}
+#cart-container>div>button:nth-child(6){
+    background-color: black;
+    color: white;
+    margin-left: 30px;
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+   
+}
+#button{
+    position: fixed;
+    top: 0;
+    margin-left: 1100px;
+    margin-top: 50px;
+    
+}
+#button>button{
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+#button>button:hover{
+    text-decoration: underline;
+    border: 2px solid red;
+    
+}
+#paragraph{
+    margin-top: 70px;
+    
+    width: 100%;
+}
+#paragraph>div{
+    width: 60%;
+    padding: 10px 10px 10px 10px;
+    border: 2px solid#ff930b;
+    margin-left: 130px;
+}
+#paragraph>div>p{
+    color: #ff964a;
+}
+#head{
+    margin-left: 130px;
+}
+#const{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+    gap: 20px;
+    margin-top: 50px;
+}
+#const>div{
+    width: 60%;
+    margin-left: 130px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
+}
+#const>div>p{
+    margin-left: 20px;
+}
+#const>div>img{
+    width: 100%;
+}
+#const>div:hover{
+    text-decoration: underline;
+    border: 2px solid #ff964a;
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+}
+#payment{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px;
+    margin-top: 130PX;
+}
+#payment>div{
+   width: 17%;
+    margin-left: 130px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
+}
+#payment>div>img{
+   margin-left: 40px;
+   margin-top: 10px;
+}
+#payment>div>p{
+    /* margin-left: 35px;
+    margin-top: 20px; */
+    text-align: center;
+ }
+ #payment>div:hover{
+    text-decoration: underline;
+    border: 2px solid #ff964a;
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+}
