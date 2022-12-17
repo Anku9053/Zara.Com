@@ -60,6 +60,7 @@ cursor: pointer;
     
    
 }
+
 #reprint{
     margin-left: 900px;
     position: fixed;
@@ -72,13 +73,15 @@ cursor: pointer;
     width: 200px;
     height: 30px;
     color: white;
-    border: 2px solid black;
+    
     background-color: black;
     cursor: pointer;
     border-radius: 10px;
 }
 #reprint>button:hover{
-    border: 2px solid rgb(255, 0, 0);
+    border: 2px solid rgb(128, 126, 126);
+    text-decoration: underline;
+    background-color: rgb(82, 80, 80);
 }
 #cart-container{
     margin-top: 200px;
