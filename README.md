@@ -1,7 +1,7 @@
 
 # Zara.Com
 
-This is an e-commerce website where you can buy clothes as well shoes. It will provide you a door step deleivery.
+This is an e-commerce website offering millions of products for every customer. You can purchase trendy clothes and shoes here, and we provide doorstep delivery.
 
 ## Installation
 
